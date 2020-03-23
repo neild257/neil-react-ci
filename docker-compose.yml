@@ -1,0 +1,11 @@
+version: '3'
+services: 
+    react-ci:
+        build:
+            context: . # the context where all files will be present
+            dockerfile: Dockerfile.dev # the name of the file that will contain the dockerfile script
+        ports:
+            - "3000:3000"
+        volumes: # adding the volumes mapping to create a reference
+            - /app/node_modules # do not add any mappings for the node_modules
+            - .:/app # a mapping for current directory to working directory in container

@@ -7,3 +7,9 @@ test('renders learn react link', () => {
   const linkElement = getByText(/learn react/i);
   expect(linkElement).toBeInTheDocument();
 });
+
+describe('<App />', () => {
+  it('basic render', () => {
+    expect(1).toBe(1);
+  });
+});
