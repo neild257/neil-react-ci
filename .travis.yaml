@@ -9,4 +9,4 @@ before_install:
   - docker build -t harshitpareek/react-ci-dev -f Dockerfile.dev .
 # running our test suit but adding coverage will make it exit with code 0 if everything goes well
 script:
-  - docker run harshitpareek/react-ci-dev npm run test -- --coverage
+  - docker run -e CI=true harshitpareek/react-ci-dev npm run test
