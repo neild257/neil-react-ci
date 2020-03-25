@@ -13,6 +13,8 @@ script:
 
 # yml script for the deployment of the application to aws elasticbeanstalk
 deploy:
+  # issue with v1 of dpl script now it uses only v2
+  edge: true
   provider: elasticbeanstalk
   region: "us-east-2"
   app: "react-ci"
