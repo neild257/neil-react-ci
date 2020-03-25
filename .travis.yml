@@ -1,11 +1,6 @@
 #specifiying language
 language: node_js
-node_js:
-  - "9"
 sudo: required
-branches:
-  only:
-    - master
 # services required for the travis CI
 services:
   - docker
