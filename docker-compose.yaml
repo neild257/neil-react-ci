@@ -1,0 +1,21 @@
+version: '3'
+services: 
+    react-ci-dev:
+        tty: true # fixing the issue of react exiting with 0
+        build:
+            context: . # the context where all files will be present
+            dockerfile: Dockerfile.dev # the name of the file that will contain the dockerfile script
+        ports:
+            - "3000:3000"
+        volumes: # adding the volumes mapping to create a reference
+            - /app/node_modules # do not add any mappings for the node_modules
+            - .:/app # a mapping for current directory to working directory in container
+    tests:
+        tty: true
+        build:
+            context: .
+            dockerfile: Dockerfile.dev
+        volumes:
+            - /app/node_modules
+            - .:/app
+        command: ["npm", "run", "test"] # adding the command that to be run in tests container
