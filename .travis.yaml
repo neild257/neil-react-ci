@@ -1,6 +1,6 @@
 sudo: required
 # to solve the rake not find error
-language: generic
+language: node_js
 # services required for the travis CI
 services:
   - docker
