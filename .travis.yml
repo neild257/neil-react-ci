@@ -10,3 +10,17 @@ before_install:
 # running our test suit but adding coverage will make it exit with code 0 if everything goes well
 script:
   - docker run -e CI=true harshitpareek/react-ci-dev npm run test
+
+# yml script for the deployment of the application to aws elasticbeanstalk
+deploy:
+  provider: elasticbeanstalk
+  region: "us-east-2"
+  app: "react-ci"
+  env: "ReactCi-env"
+  bucket_name: "elasticbeanstalk-us-east-2-712991057399"
+  bucket_path: "react-ci"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
