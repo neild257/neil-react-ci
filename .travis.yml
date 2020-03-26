@@ -6,7 +6,7 @@ services:
   - docker
 # building the docker by using the Dockerfile.dev
 before_install:
-  - docker build -t harshitpareek/react-ci-dev -f Dockerfile.dev .
+  - docker build -t harshitpareek/react-ci-dev -f Dockerfile.prod .
 # running our test suit but adding coverage will make it exit with code 0 if everything goes well
 script:
   - docker run -e CI=true harshitpareek/react-ci-dev npm run test
